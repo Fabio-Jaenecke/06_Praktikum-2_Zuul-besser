@@ -14,7 +14,8 @@ import java.util.ArrayList;
 public class Person {
 	private final String name;
 	private final int tragkraft;
-	private final ArrayList<Gegenstand> rucksack = new ArrayList<Gegenstand>();
+	private Rucksack rucksack;
+	//private final ArrayList<Gegenstand> rucksack = new ArrayList<Gegenstand>();
 
 	/**
 	 * Erzeugt eine Person mit Namen und Tragkraft.
@@ -23,10 +24,7 @@ public class Person {
 	public Person(String name, int tragkraft) {
 		this.tragkraft = tragkraft;
 		this.name = name;
-	}
-
-	public ArrayList<Gegenstand> getRucksack() {
-		return rucksack;
+		this.rucksack = new Rucksack();
 	}
 
 	/**
@@ -42,5 +40,13 @@ public class Person {
 	 */
 	public String gibName() {
 		return name;
+	}
+	
+	/**
+	 * Gibt zurück, ob die Person einen Rucksack hat, und falls ja, welchen
+	 * @return rucksack; 
+	 */
+	public Rucksack gibRucksack() {
+		return rucksack;
 	}
 }
