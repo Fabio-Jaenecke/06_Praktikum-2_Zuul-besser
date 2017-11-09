@@ -23,6 +23,11 @@ public class Spiel {
 	private Parser parser;
 	private Raum aktuellerRaum;
 	private Person spieler;
+	
+	public static void main(String[] args) {
+		Spiel spiel = new Spiel();
+		spiel.spielen();
+	}
 
 	/**
 	 * Erzeuge ein Spiel und initialisiere die Spielwelt.
@@ -166,9 +171,8 @@ public class Spiel {
 	 */
 	private boolean verarbeiteBefehl(Befehl befehl) {
 		boolean moechteBeenden = false;
-
-		Befehlswort befehlswort = befehl.gibBefehlswort();
-
+		Befehlswort befehlswort = Befehlswort.gibBefehlswort(befehl.gibBefehlswort());
+		
 		switch (befehlswort) {
 		case UNBEKANNT:
 			System.out.println("Ich weiss nicht, was Sie meinen...");
